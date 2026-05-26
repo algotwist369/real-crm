@@ -128,7 +128,9 @@ const SocialMediaPage = () => {
                 <div>
                     <h1 className="text-xl font-medium text-white mb-1">Social Publishing</h1>
                     <p className="text-sm text-zinc-400">Create, schedule, and monitor Facebook and Instagram posts.</p>
-                </div>
+                </div> 
+
+                <h1 className='text-red-500 underline'>Social Publishing Feature is under development. Will notify once completed.</h1>
                 <div className="flex items-center gap-3">
                     <div className={`px-3 py-2 rounded border text-xs ${workerHealthy ? 'border-green-500/20 text-green-400 bg-green-500/10' : 'border-red-500/20 text-red-400 bg-red-500/10'}`}>
                         Worker {workerHealthy ? 'healthy' : 'offline'}
