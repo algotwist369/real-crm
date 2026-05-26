@@ -61,8 +61,14 @@ const SocialMediaPage = () => {
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
         const connect = params.get('social_connect');
+        const reason = params.get('reason');
         if (connect === 'success') toast.success('Meta accounts connected');
-        if (connect === 'failed') toast.error('Meta connection failed');
+        if (connect === 'failed') {
+            const message = reason === 'no_pages_or_instagram_accounts_found'
+                ? 'Meta connected, but no Facebook Pages or Instagram Business accounts were found for this user.'
+                : 'Meta connection failed';
+            toast.error(message, { duration: 7000 });
+        }
         if (connect) {
             window.history.replaceState({}, document.title, window.location.pathname);
             refetchAccounts();
